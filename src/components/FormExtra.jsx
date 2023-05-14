@@ -20,6 +20,7 @@ export default function FormExtra() {
         <a
           href="#"
           className="font-medium text-purple-600 hover:text-purple-500"
+          style={{ color: "#F03D05" }}
         >
           Forgot your password?
         </a>
