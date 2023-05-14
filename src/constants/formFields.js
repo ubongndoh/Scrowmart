@@ -1,6 +1,6 @@
 const loginFields = [
   {
-    labelText: "Email address",
+    labelText: "Email ",
     labelFor: "email-address",
     id: "email-address",
     name: "email",
@@ -22,7 +22,7 @@ const loginFields = [
 ];
 const forgetPasswordFields = [
   {
-    labelText: "Email address",
+    labelText: "Email",
     labelFor: "email-address",
     id: "email-address",
     name: "email",
@@ -44,7 +44,7 @@ const signupFields = [
     placeholder: "Full Name",
   },
   {
-    labelText: "Email address",
+    labelText: "Email",
     labelFor: "email-address",
     id: "email-address",
     name: "email",
@@ -75,4 +75,27 @@ const signupFields = [
   },
 ];
 
-export { loginFields, signupFields, forgetPasswordFields };
+const resetPasswordFields = [
+  {
+    labelText: "Password",
+    labelFor: "password",
+    id: "password",
+    name: "password",
+    type: "password",
+    autoComplete: "current-password",
+    isRequired: true,
+    placeholder: "Password",
+  },
+  {
+    labelText: "Confirm Password",
+    labelFor: "confirm-password",
+    id: "confirm-password",
+    name: "confirm-password",
+    type: "password",
+    autoComplete: "confirm-password",
+    isRequired: true,
+    placeholder: "Confirm Password",
+  },
+];
+
+export { loginFields, signupFields, forgetPasswordFields, resetPasswordFields };

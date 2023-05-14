@@ -15,6 +15,9 @@ export default function Input({
 }) {
   return (
     <div className="my-5">
+      <div className="" style={{ color: "#992500" }}>
+        {labelText}
+      </div>
       <label htmlFor={labelFor} className="sr-only">
         {labelText}
       </label>
