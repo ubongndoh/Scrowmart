@@ -7,7 +7,7 @@ export default function Header({
   linkUrl = "#",
 }) {
   return (
-    <div className="mb-10">
+    <div className="">
       <div className="flex justify-center">
         <img
           alt=""
@@ -18,7 +18,7 @@ export default function Header({
       <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
         {heading}
       </h2>
-      <p className="mt-2 text-center text-sm text-gray-600 mt-5">
+      <p className="mt-2 text-center text-sm text-gray-600 ">
         {paragraph}{" "}
         <Link
           to={linkUrl}

@@ -1,21 +1,36 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SignupPage from "./pages/Signup";
-import LoginPage from "./pages/Login";
-import ForgetPassword from "./pages/ForgetPassword";
-import ResetPassword from "./pages/ResetPassword";
+// import SignupPage from "./pages/Signup";
+// import LoginPage from "./pages/Login";
+import ForgetPassword from "./auth/ForgetPassword";
+import ResetPassword from "./auth/ResetPassword";
+import SignUp from "./auth/SignUp";
+// import Login from "./components/ForgetPassword";
+import { UserProvider } from "./auth/UserContext";
+import Login from "./auth/Login";
+import Home from "./pages/Home";
+import PrivateRoute from "./auth/PrivateRoute";
+import Verify from "./auth/Verify";
+import Step from "./auth/Otp";
 
 function App() {
   return (
-    <div className="min-h-full h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<LoginPage />} />
-            <Route path="/signup" element={<SignupPage />} />
-            <Route path="/forget-password" element={<ForgetPassword />} />
-            <Route path="/reset-password" element={<ResetPassword />} />
-          </Routes>
-        </BrowserRouter>
+    <div className="">
+      <div className="">
+        <UserProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route element={<PrivateRoute />}>
+                <Route path="/" element={<Home />} />
+              </Route>
+              <Route path="/verify" element={<Verify />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/otp" element={<Step />} />
+              <Route path="/forget-password" element={<ForgetPassword />} />
+              <Route path="/reset-password" element={<ResetPassword />} />
+            </Routes>
+          </BrowserRouter>
+        </UserProvider>
       </div>
     </div>
   );

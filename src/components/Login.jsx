@@ -17,11 +17,27 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(loginState);
     authenticateUser();
   };
 
   //Handle Login API Integration here
-  const authenticateUser = () => {};
+  const authenticateUser = () => {
+    const endpoint = `http://scrowmart.online/api/v1/login`;
+    fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(loginState),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        //API Success from LoginRadius Login API
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <form className="mt-8 space-y-6" onSubmit={handleSubmit}>

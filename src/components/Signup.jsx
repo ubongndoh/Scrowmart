@@ -16,12 +16,27 @@ export default function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(signupState);
+    //console.log(JSON.stringify(signupState));
     createAccount();
   };
 
   //handle Signup API Integration here
-  const createAccount = () => {};
+  const createAccount = () => {
+    const endpoint = `http://scrowmart.online/api/v1/buyer/register`;
+    fetch(endpoint, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+      },
+      body: signupState,
+    })
+      .then((response) => response.json())
+      .then(
+        (data) => console.log(data)
+        //API Success from LoginRadius Login API
+      )
+      .catch((error) => console.log(error));
+  };
 
   return (
     <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
